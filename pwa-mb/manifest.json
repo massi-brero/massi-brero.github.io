@@ -9,6 +9,11 @@
       "src": "/images/logo.png",
       "sizes": "240x145",
       "type": "image/png"
+    },
+    {
+      "src": "/images/logo-icon.png",
+      "sizes": "168x102",
+      "type": "image/png"
     }
   ]
 }
