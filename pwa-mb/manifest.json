@@ -7,6 +7,12 @@
   "start_url": "https://massi-brero.github.io/pwa-mb/index.html",
   "icons": [
     {
+      "src": "/images/logo-icon-128.png",
+      "sizes": "128x77",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
       "src": "/images/logo-icon.png",
       "sizes": "240x145",
       "type": "image/png",
