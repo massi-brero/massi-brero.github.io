@@ -1,8 +1,8 @@
 {
   "name": "IMVS PWA",
   "short_name": "IMVS PWA",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "theme_color": "blue",
+  "background_color": "lightgrey",
   "display": "standalone",
   "start_url": "https://massi-brero.github.io/pwa-mb/index.html",
   "icons": [
