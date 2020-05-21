@@ -1,6 +1,6 @@
 {
-  "name": "IMVS PWA",
-  "short_name": "IMVS PWA",
+  "name": "Die neue IMVS PWA",
+  "short_name": "IMVS-PWA",
   "theme_color": "blue",
   "background_color": "lightgrey",
   "display": "standalone",
