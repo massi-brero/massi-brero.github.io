@@ -1,5 +1,5 @@
 var cacheName = 'pwa-mb'
-var filesToCache = ['/', '/index.html', '/css/styles.css', '/js/app.js']
+var filesToCache = ['/', '/index.html', '/css/styles.css', '/app.js']
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function (e) {
