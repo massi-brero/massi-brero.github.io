@@ -6,7 +6,8 @@ let filesToCache = [
   "./index.html",
   "./css/styles.css",
   "./app.js",
-  "/charts/pie_chart.jpg",
+  "./charts/pie_chart.jpg",
+  "./charts/columns_chart.png",
 ];
 
 /* Start the service worker and cache all of the app's content */
@@ -33,3 +34,10 @@ workbox.routing.registerRoute(
       cacheName: 'static-resources'
     })
 );
+
+// workbox.routing.registerRoute(
+//     /\/charts\/(?:png|jpg|svg)$/,
+//     new workbox.strategies.NetworkFirst({
+//         cacheName: 'static-resources'
+//     })
+// );
