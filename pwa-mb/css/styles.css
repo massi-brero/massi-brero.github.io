@@ -1,13 +1,12 @@
 body {
   font-family: sans-serif;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .top-navigation {
 }
 .toolbar {
   display: flex;
-  margin: 0;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
