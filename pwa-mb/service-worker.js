@@ -35,9 +35,9 @@ workbox.routing.registerRoute(
     })
 );
 
-// workbox.routing.registerRoute(
-//     /\/charts\/(?:png|jpg|svg)$/,
-//     new workbox.strategies.NetworkFirst({
-//         cacheName: 'static-resources'
-//     })
-// );
+workbox.routing.registerRoute(
+    /\/charts\/(?:png|jpg|svg)$/,
+    new workbox.strategies.NetworkFirst({
+        cacheName: 'static-resources'
+    })
+);
