@@ -28,6 +28,7 @@ const showLocalNotification = async (title, body, swRegistration) => {
 const main = () => {
   check();
   const swRegistration = registerServiceWorker();
+  console.log(registerServiceWorker());
   const permission = requestNotificationPermission();
   const localNotification = showLocalNotification(
       'Neue Statistiken verfügbar',
