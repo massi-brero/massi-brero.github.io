@@ -18,18 +18,18 @@ const requestNotificationPermission = async () => {
   }
 };
 
-const showLocalNotification = async (title, body, swRegistration) => {
+const showLocalNotification = (title, body, swRegistration) => {
   const options = {
     body,
   };
-  await swRegistration.showNotification(title, options);
+  swRegistration.showNotification(title, options);
 };
 
 const main = async () => {
   check();
   const swRegistration = await registerServiceWorker();
   const permission = await requestNotificationPermission();
-  await showLocalNotification(
+  showLocalNotification(
       'Neue Statistiken verfügbar',
       'Bitte aktualisieren Sie die IMVS-Stats App',
       swRegistration);
