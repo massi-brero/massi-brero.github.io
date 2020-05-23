@@ -16,6 +16,8 @@ const requestNotificationPermission = async () => {
   if (permission !== "granted") {
     throw new Error("Permission not granted for Notification");
   }
+
+  return permission;
 };
 
 const showLocalNotification = (title, body, swRegistration) => {
@@ -34,7 +36,7 @@ const main = async () => {
   check();
   const swRegistration = await registerServiceWorker();
   const permission = await requestNotificationPermission();
-  if (permission !== "granted") {
+  if (permission === "granted") {
     showLocalNotification(
         'Neue Statistiken verfügbar',
         'Bitte aktualisieren Sie die IMVS-Stats App');
