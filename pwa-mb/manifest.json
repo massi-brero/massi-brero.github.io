@@ -27,7 +27,7 @@
     },
     {
       "src": "/pwa-mb/images/logo.png",
-      "sizes": "168x102",
+      "sizes": "240X145",
       "type": "image/png",
       "purpose": "any"
     }
