@@ -28,7 +28,7 @@ const showLocalNotification = (title, body, swRegistration) => {
   };
 
   navigator.serviceWorker.ready.then(function (registration) {
-    const response = registration.showNotification(title, options);resp
+    const response = registration.showNotification(title, options);
     console.log(response);
   });
 };
