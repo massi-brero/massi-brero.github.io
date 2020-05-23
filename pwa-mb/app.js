@@ -7,10 +7,8 @@ const check = () => {
   }
 };
 
-const registerServiceWorker = () => {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js");
-  });
+const registerServiceWorker = async () => {
+    return await navigator.serviceWorker.register("./service-worker.js");
 };
 
 const requestNotificationPermission = async () => {
@@ -18,14 +16,23 @@ const requestNotificationPermission = async () => {
   if (permission !== "granted") {
     throw new Error("Permission not granted for Notification");
   }
+};
 
-  return permission;
+const showLocalNotification = async (title, body, swRegistration) => {
+  const options = {
+    body,
+  };
+  swRegistration.showNotification(title, options);
 };
 
 const main = () => {
   check();
-  registerServiceWorker();
+  const swRegistration = registerServiceWorker();
   const permission = requestNotificationPermission();
+  const localNotification = showLocalNotification(
+      'Neue Statistiken verfügbar',
+      'Bitte aktualisieren Sie die IMVS-Stats App',
+      swRegistration);
 };
 
 main();
