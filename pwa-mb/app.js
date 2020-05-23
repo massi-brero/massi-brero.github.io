@@ -14,13 +14,11 @@ const registerServiceWorker = () => {
 };
 
 const requestNotificationPermission = async () => {
-  const permission = window.Notification.requestPermission();
-  console.log(permission);
-  if (permission !== "granted") {
-    throw new Error("Permission not granted for Notification");
-  }
-
-  return permission;
+  window.Notification.requestPermission().then(response => {
+    if (response !== "granted") {
+      throw new Error("Permission not granted for Notification");
+    }
+  });
 };
 
 const main = () => {
