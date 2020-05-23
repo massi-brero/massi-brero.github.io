@@ -27,7 +27,7 @@ const showLocalNotification = (title, body, swRegistration) => {
     tag: "vibration-sample",
   };
 
-  navigator.serviceWorker.ready.then(function (registration) {
+  navigator.serviceWorker.ready.then(registration => {
     registration.showNotification(title, options).then(NotificationEvent => {
       console.log(NotificationEvent);
     })
