@@ -22,7 +22,7 @@ const showLocalNotification = async (title, body, swRegistration) => {
   const options = {
     body,
   };
-  swRegistration.showNotification(title, options);
+  await swRegistration.showNotification(title, options);
 };
 
 const main = () => {
