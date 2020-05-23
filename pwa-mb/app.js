@@ -21,18 +21,24 @@ const requestNotificationPermission = async () => {
 const showLocalNotification = (title, body, swRegistration) => {
   const options = {
     body,
+    vibrate: [200, 100, 200, 100, 200, 100, 200],
+    tag: 'vibration-sample'
   };
-  swRegistration.showNotification(title, options);
+
+  navigator.serviceWorker.ready.then(function(registration) {
+    registration.showNotification(title, options);
+  };
 };
 
 const main = async () => {
   check();
   const swRegistration = await registerServiceWorker();
   const permission = await requestNotificationPermission();
-  showLocalNotification(
-      'Neue Statistiken verfügbar',
-      'Bitte aktualisieren Sie die IMVS-Stats App',
-      swRegistration);
+  if (permission !== "granted") {
+    showLocalNotification(
+        'Neue Statistiken verfügbar',
+        'Bitte aktualisieren Sie die IMVS-Stats App');
+  }
 };
 
 main();
