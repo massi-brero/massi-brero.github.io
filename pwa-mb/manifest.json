@@ -9,7 +9,7 @@
 
     {
       "src": "/pwa-mb/images/logo-icon-128.png",
-      "sizes": "128x128",
+      "sizes": "128x77",
       "type": "image/png",
       "purpose": "any"
     },
@@ -27,7 +27,7 @@
     },
     {
       "src": "/pwa-mb/images/logo.png",
-      "sizes": "240X145",
+      "sizes": "240x145",
       "type": "image/png",
       "purpose": "any"
     }
