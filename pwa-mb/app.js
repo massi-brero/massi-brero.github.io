@@ -28,6 +28,7 @@ const showLocalNotification = (title, body, swRegistration) => {
   };
 
   navigator.serviceWorker.ready.then(registration => {
+    console.log(registration);
     registration.showNotification(title, options).then(NotificationEvent => {
       console.log(NotificationEvent);
     })
