@@ -8,7 +8,7 @@ const check = () => {
 };
 
 const registerServiceWorker = async () => {
-    return await navigator.serviceWorker.register("./service-worker.js");
+  return await navigator.serviceWorker.register("./service-worker.js");
 };
 
 const requestNotificationPermission = async () => {
@@ -24,12 +24,12 @@ const showLocalNotification = (title, body, swRegistration) => {
   const options = {
     body,
     vibrate: [200, 100, 200, 100, 200, 100, 200],
-    tag: 'vibration-sample'
+    tag: "vibration-sample",
   };
 
-  navigator.serviceWorker.ready.then(function(registration) {
+  navigator.serviceWorker.ready.then(function (registration) {
     registration.showNotification(title, options);
-  };
+  });
 };
 
 const main = async () => {
@@ -38,9 +38,12 @@ const main = async () => {
   const permission = await requestNotificationPermission();
   if (permission === "granted") {
     showLocalNotification(
-        'Neue Statistiken verfügbar',
-        'Bitte aktualisieren Sie die IMVS-Stats App');
+      "Neue Statistiken verfügbar",
+      "Bitte aktualisieren Sie die IMVS-Stats App"
+    );
   }
 };
 
-main();
+main().then(() => {
+  console.log("application started");
+});
