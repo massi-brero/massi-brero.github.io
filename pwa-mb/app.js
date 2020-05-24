@@ -1,5 +1,3 @@
-let permission = 'default';
-
 const check = () => {
   if (!("serviceWorker" in navigator)) {
     throw new Error("No Service Worker Support!");
@@ -42,15 +40,15 @@ const main = async () => {
 };
 
 const startNotifications = async () => {
-  permission = await requestNotificationPermission();
+  const permission = await requestNotificationPermission();
+  if (permission === "granted") {
+    showLocalNotification(
+      "Neue Statistiken verfügbar",
+      "Bitte aktualisieren Sie die IMVS-Stats App"
+    );
+  }
 };
 
 main().then(() => {
   console.log("application started");
-  if (permission === "granted") {
-    showLocalNotification(
-        "Neue Statistiken verfügbar",
-        "Bitte aktualisieren Sie die IMVS-Stats App"
-    );
-  }
 });
