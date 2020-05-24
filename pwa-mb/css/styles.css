@@ -45,6 +45,7 @@ nav li {
   position: relative;
   top: 16px;
   left: 24px;
+  cursor: pointer;
 
   display: block;
   padding: 0;

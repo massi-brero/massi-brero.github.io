@@ -23,11 +23,10 @@ self.addEventListener("install", function (e) {
 
 self.addEventListener("activate", async () => {
   try {
+    console.log("activate");
     const options = {};
-    const subscriptions = await self.registration.pushManager.subscribe(
-      options
-    );
-    console.log(JSON.stringify(subscriptions));
+    const subscription = await self.registration.pushManager.subscribe(options);
+    console.log(subscription);
   } catch (e) {
     console.log("Error", e);
   }
