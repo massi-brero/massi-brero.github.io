@@ -43,12 +43,18 @@ const startNotifications = async () => {
   const permission = await requestNotificationPermission();
   if (permission === "granted") {
     showLocalNotification(
-      "Neue Statistiken verfügbar",
-      "Bitte aktualisieren Sie die IMVS-Stats App"
+      "Benachrichtigung",
+      "Sie werden benachrichtigt wenn neue Auswertungen verfügbar sind."
     );
   }
 };
 
 main().then(() => {
   console.log("application started");
+  if (window.Notification.permission === 'granted') {
+    showLocalNotification(
+        "Neue Statistiken verfügbar",
+        "Bitte aktualisieren Sie die IMVS-Stats App"
+    );
+  }
 });
