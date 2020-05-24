@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>IMVS Stats</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <meta name="theme-color" content="#2196f3" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="IMVS PWA" />
+    <meta name="msapplication-TileImage" content="images/logo-icon.png" />
+    <meta name="msapplication-TileColor" content="lightgrey" />
+  </head>
+  <body>
+    <script src="./app.js"></script>
+    <div class="top-navigation">
+      <div class="toolbar">
+        <img src="images/logo.png" alt="" />
+        <nav>
+          <ul>
+            <li>Foo</li>
+            <li>Bar</li>
+            <li>Baz</li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="content">
+      <h1>IMVS Statistiken</h1>
+      <p>Die wirklich neuesten Daten</p>
+      <img src="charts/pie_chart.jpg" alt="" />
+      <img src="charts/columns_chart.png" alt="" />
+      <button class="permission-btn" onclick="main()">
+        Nachrichten aktivieren
+      </button>
+    </div>
+  </body>
+</html>

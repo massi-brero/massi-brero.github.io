@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "prettier": "^2.0.5"
+  },
+  "devDependencies": {
+    "local-web-server": "^4.1.0",
+    "lws-redirect": "^2.0.0"
+  }
+}
