@@ -37,15 +37,18 @@ const showLocalNotification = (title, body, swRegistration) => {
 const main = async () => {
   check();
   const swRegistration = await registerServiceWorker();
+};
+
+const startNotifications = async () => {
   const permission = await requestNotificationPermission();
   if (permission === "granted") {
     showLocalNotification(
-      "Neue Statistiken verfügbar",
-      "Bitte aktualisieren Sie die IMVS-Stats App"
+        "Neue Statistiken verfügbar",
+        "Bitte aktualisieren Sie die IMVS-Stats App"
     );
   }
-};
+}
 
-// main().then(() => {
-//   console.log("application started");
-// });
+main().then(() => {
+  console.log("application started");
+});
