@@ -1,3 +1,5 @@
+let permission = 'default';
+
 const check = () => {
   if (!("serviceWorker" in navigator)) {
     throw new Error("No Service Worker Support!");
@@ -27,10 +29,10 @@ const showLocalNotification = (title, body, swRegistration) => {
     tag: "vibration-sample",
   };
 
-  navigator.serviceWorker.ready.then(registration => {
-    registration.showNotification(title, options).then(NotificationEvent => {
+  navigator.serviceWorker.ready.then((registration) => {
+    registration.showNotification(title, options).then((NotificationEvent) => {
       console.log(NotificationEvent);
-    })
+    });
   });
 };
 
@@ -40,15 +42,15 @@ const main = async () => {
 };
 
 const startNotifications = async () => {
-  const permission = await requestNotificationPermission();
+  permission = await requestNotificationPermission();
+};
+
+main().then(() => {
+  console.log("application started");
   if (permission === "granted") {
     showLocalNotification(
         "Neue Statistiken verfügbar",
         "Bitte aktualisieren Sie die IMVS-Stats App"
     );
   }
-}
-
-main().then(() => {
-  console.log("application started");
 });
