@@ -7,9 +7,8 @@ const check = () => {
   }
 };
 
-const registerServiceWorker = () => {
-  return
-  navigator.serviceWorker.register("./service-worker.js");
+const registerServiceWorker = async () => {
+  return await navigator.serviceWorker.register("./service-worker.js");
 };
 
 const requestNotificationPermission = async () => {
