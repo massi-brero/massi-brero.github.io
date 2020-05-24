@@ -21,17 +21,6 @@ self.addEventListener("install", function (e) {
   );
 });
 
-self.addEventListener("activate", async () => {
-  try {
-    console.log("activate");
-    const options = {};
-    const subscription = await self.registration.pushManager.subscribe(options);
-    console.log(subscription);
-  } catch (e) {
-    console.log("Error", e);
-  }
-});
-
 /* Serve cached content when offline */
 self.addEventListener("fetch", function (e) {
   e.respondWith(
