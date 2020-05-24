@@ -37,7 +37,72 @@ nav li {
   color: white;
 }
 
-.content img {
-  width: 600px;
-  margin-right: 24px;
+.content > * {
+  margin-left: 24px;
+}
+
+.permission-btn {
+  position: relative;
+  top: 16px;
+  left: 24px;
+
+  display: block;
+  padding: 0;
+  font-size: 0.8em;
+
+  overflow: hidden;
+
+  border-width: 0;
+  outline: none;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+
+  background-color: blue;
+  color: white;
+  width: 12em;
+  height: 2em;
+  transition: background-color 0.3s;
+}
+
+.permission-btn:hover,
+.permission-btn:focus {
+  background-color: #27ae60;
+}
+
+.permission-btn > * {
+  position: relative;
+}
+
+.permission-btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.permission-btn:before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  display: block;
+  width: 0;
+  padding-top: 0;
+
+  border-radius: 100%;
+
+  background-color: rgba(236, 240, 241, 0.3);
+
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.permission-btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+
+  transition: width 0.2s ease-out, padding-top 0.2s ease-out;
 }
