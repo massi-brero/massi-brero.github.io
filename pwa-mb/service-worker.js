@@ -1,4 +1,6 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
+importScripts(
+  "https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js"
+);
 
 let cacheName = "pwa-mb";
 let filesToCache = [
@@ -19,6 +21,18 @@ self.addEventListener("install", function (e) {
   );
 });
 
+self.addEventListener("activate", async () => {
+  try {
+    const options = {};
+    const subscriptions = await self.registration.pushManager.subscribe(
+      options
+    );
+    console.log(JSON.stringify(subscriptions));
+  } catch (e) {
+    console.log("Error", e);
+  }
+});
+
 /* Serve cached content when offline */
 self.addEventListener("fetch", function (e) {
   e.respondWith(
@@ -29,15 +43,15 @@ self.addEventListener("fetch", function (e) {
 });
 
 workbox.routing.registerRoute(
-    /\.(?:html|js|css)$/,
-    new workbox.strategies.StaleWhileRevalidate({
-      cacheName: 'static-resources'
-    })
+  /\.(?:html|js|css)$/,
+  new workbox.strategies.StaleWhileRevalidate({
+    cacheName: "static-resources",
+  })
 );
 
 workbox.routing.registerRoute(
-    /\/charts\/.*(?:png|jpg|svg)$/,
-    new workbox.strategies.NetworkFirst({
-        cacheName: 'static-resources'
-    })
+  /\/charts\/.*(?:png|jpg|svg)$/,
+  new workbox.strategies.NetworkFirst({
+    cacheName: "static-resources",
+  })
 );
